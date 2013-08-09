@@ -13,6 +13,7 @@ module GamePlay
     SuccessRoll(..)
   , successRoll
     -- * Reaction rolls
+    -- $reaction
   , Reaction(..)
   , reactionRoll
     -- * Damage rolls
