@@ -21,7 +21,7 @@ import qualified Data.List as L
 
 ------------------------------------------------------------------------
 
-data SkillEntry = SkillEntry
+data SkillEntry = SE
   { eSkillName :: String
   , eSkillAttr :: String
   , eSkillDifficulty :: String
@@ -35,11 +35,18 @@ type SkillTable = [ SkillEntry ]
 
 defaultSkillTable :: SkillTable
 defaultSkillTable =
-  [ SkillEntry "Computer Operation" "IQ" "E" True ["IQ-4"]
-  , SkillEntry "Computer Programming" "IQ" "H" True []
-  , SkillEntry "Jumping" "DX" "E" False []
-  , SkillEntry "Lockpicking" "IQ" "A" False ["IQ-5"]
-  , SkillEntry "Tactics" "IQ" "H" False ["IQ-6"]
+  [ SE "Computer Operation"   "IQ" "E" True  ["IQ-4"]
+  , SE "Computer Programming" "IQ" "H" True  []
+  , SE "Jumping"              "DX" "E" False []
+  , SE "Lockpicking"          "IQ" "A" False ["IQ-5"]
+  , SE "Tactics"              "IQ" "H" False ["IQ-6"]
+  , SE "Guns (Pistol)"        "DX" "E" True  ["DX-4"]
+  , SE "Guns (Rifle)"         "DX" "E" True  ["DX-4"]
+  , SE "Scrounging"           "IQ" "E" False ["IQ-4"]
+  , SE "Shadowing"            "IQ" "A" False ["IQ-5"]
+  , SE "Holdout"              "IQ" "A" False ["IQ-5"]
+  , SE "Search"               "IQ" "A" False ["IQ-5"]
+  , SE "First Aid"            "IQ" "E" True  ["IQ-4"]
   ]
 
 ------------------------------------------------------------------------
