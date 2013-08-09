@@ -22,7 +22,9 @@ module GamePlay
     -- * Damage rolls
     -- $damage
   , damageRoll
-  ,
+    -- * Contests
+    -- $contests
+  , quickContest
   ) where
 
 import Internal.Dice
@@ -112,3 +114,20 @@ test_reaction r
 -- | Perform a damage roll using the \"dice+adds\" system.
 damageRoll :: Int -> Int -> GenIO -> IO Int
 damageRoll d adds g = rollDice d adds g
+
+------------------------------------------------------------------------
+-- $contests
+
+-- | @quickContest t1 t2@ runs a Quick contest (Lite, p. 3) between
+-- two players, comparing their respective Effective skill t1 and t2.
+--
+-- The result indicates the winner (1 or 2) and the winning roll, if
+-- a winner could be determined.
+quickContest :: Int -> Int -> GenIO -> IO (Maybe (Int, SuccessRoll))
+quickContest t1 t2 g = do
+  r1 <- successRoll t1 g
+  r2 <- successRoll t2 g
+  return $ case compare r1 r2 of
+    GT -> Just (1, r1)
+    LT -> Just (2, r2)
+    EQ -> Nothing
