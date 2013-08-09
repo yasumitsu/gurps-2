@@ -15,6 +15,9 @@ module GamePlay
     -- * Reaction rolls
   , Reaction(..)
   , reactionRoll
+    -- * Damage rolls
+    -- $damage
+  , damageRoll
   ,
   ) where
 
@@ -106,3 +109,10 @@ test_reaction r
   | r <= 15   = Good
   | r <= 18   = VeryGood
   | otherwise = Excellent -- 19+
+
+------------------------------------------------------------------------
+-- $damage
+
+-- | Perform a damage roll using the \"dice+adds\" system.
+damageRoll :: Int -> Int -> GenIO -> IO Int
+damageRoll d adds g = rollDice d adds g
