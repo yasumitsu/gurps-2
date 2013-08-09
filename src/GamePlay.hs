@@ -22,17 +22,9 @@ module GamePlay
   ,
   ) where
 
+import Internal.Dice
+
 import Data.Ord
-
-import System.Random.MWC
-
-------------------------------------------------------------------------
-
-rollDice :: Int -> Int -> GenIO -> IO Int
-rollDice d adds = uniformR (d * 1 + adds, d * 6 + adds)
-
-roll3d :: GenIO -> IO Int
-roll3d = rollDice 3 0
 
 ------------------------------------------------------------------------
 -- $success
