@@ -10,7 +10,8 @@ GURPS Lite is (C) Steve Jackson Games, Inc.
 
 module SkillTable
   ( SkillEntry(..)
-  , skillTable
+  , SkillTable
+  , defaultSkillTable
   , lookupSkill
   , lookupSkillCost
   , mkCostTable
@@ -21,15 +22,19 @@ import qualified Data.List as L
 ------------------------------------------------------------------------
 
 data SkillEntry = SkillEntry
-  { skillName :: String
-  , skillAttr :: String
-  , skillDifficulty :: String
-  , skillTech :: Bool
-  , skillDefaults :: [String]
+  { eSkillName :: String
+  , eSkillAttr :: String
+  , eSkillDifficulty :: String
+  , eSkillTech :: Bool
+  , eSkillDefaults :: [String]
   } deriving Show
 
-skillTable :: [ SkillEntry ]
-skillTable =
+type SkillTable = [ SkillEntry ]
+
+------------------------------------------------------------------------
+
+defaultSkillTable :: SkillTable
+defaultSkillTable =
   [ SkillEntry "Computer Operation" "IQ" "E" True ["IQ-4"]
   , SkillEntry "Computer Programming" "IQ" "H" True []
   , SkillEntry "Jumping" "DX" "E" False []
@@ -39,8 +44,8 @@ skillTable =
 
 ------------------------------------------------------------------------
 
-lookupSkill :: String -> Maybe SkillEntry
-lookupSkill name = L.find ((==) name . skillName) skillTable
+lookupSkill :: String -> SkillTable -> Maybe SkillEntry
+lookupSkill name tbl = L.find ((==) name . eSkillName) tbl
 
 ------------------------------------------------------------------------
 
