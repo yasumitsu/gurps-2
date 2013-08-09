@@ -43,15 +43,13 @@ data SuccessRoll = SuccessRoll
     -- ^ A critical success or failure?
   , margin :: Int
     -- ^ Absolute margin.
-    --
-    -- For failure, smaller is better; for success larger is better.
   } deriving (Eq, Show)
 
 instance Ord SuccessRoll where
   compare s1 s2 =
     case comparing succeeds s1 s2 of
-      EQ | succeeds s1 -> comparing margin s1 s2
-         | otherwise   -> comparing margin s2 s1
+      EQ | succeeds s1 -> comparing margin s1 s2 -- success: larger better
+         | otherwise   -> comparing margin s2 s1 -- failure: smaller better
       o  -> o
 
 ------------------------------------------------------------------------
