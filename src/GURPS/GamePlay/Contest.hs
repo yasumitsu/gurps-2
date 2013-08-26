@@ -1,10 +1,10 @@
-module GamePlay.Contest
+module GURPS.GamePlay.Contest
   ( quickContest
   , regularContest
   ) where
 
 import Internal.Dice
-import GamePlay.Success
+import GURPS.GamePlay.Success
 
 ------------------------------------------------------------------------
 

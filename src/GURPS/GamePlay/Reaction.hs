@@ -1,4 +1,4 @@
-module GamePlay.Reaction
+module GURPS.GamePlay.Reaction
   ( Reaction(..)
   , reactionRoll
   ) where

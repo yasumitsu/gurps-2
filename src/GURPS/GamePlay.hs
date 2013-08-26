@@ -1,5 +1,5 @@
 {-|
-Module : GamePlay
+Module : GURPS.GamePlay
 
 Types and functions for simulating GURPS gameplay.
 
@@ -9,19 +9,19 @@ GURPS Lite is (C) by Steve Jackson Games Inc., and may be downloaded at
 no cost from <www.sjgames.com/gurps/lite/>.
 -}
 
-module GamePlay
+module GURPS.GamePlay
   (
     -- * Success rolls
-    module GamePlay.Success
+    module GURPS.GamePlay.Success
     -- * Reaction rolls
-  , module GamePlay.Reaction
+  , module GURPS.GamePlay.Reaction
     -- * Damage rolls
-  , module GamePlay.Damage
+  , module GURPS.GamePlay.Damage
     -- * Contests
-  , module GamePlay.Contest
+  , module GURPS.GamePlay.Contest
   ) where
 
-import GamePlay.Success
-import GamePlay.Reaction
-import GamePlay.Damage
-import GamePlay.Contest
+import GURPS.GamePlay.Success
+import GURPS.GamePlay.Reaction
+import GURPS.GamePlay.Damage
+import GURPS.GamePlay.Contest
