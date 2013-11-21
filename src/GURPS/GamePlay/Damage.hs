@@ -1,4 +1,4 @@
-module GamePlay.Damage
+module GURPS.GamePlay.Damage
   ( damageRoll
   ) where
 

@@ -1,5 +1,5 @@
 {-|
-Module : SkillTable
+Module : GURPS.SkillTable
 
 Types and functions for working with skill tables.
 
@@ -8,7 +8,7 @@ All skills are from GURPS 4th Lite.
 GURPS Lite is (C) Steve Jackson Games, Inc.
 -}
 
-module SkillTable
+module GURPS.SkillTable
   ( SkillEntry(..)
   , SkillTable
   , defaultSkillTable

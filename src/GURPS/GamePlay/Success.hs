@@ -1,4 +1,4 @@
-module GamePlay.Success
+module GURPS.GamePlay.Success
   (
     SuccessRoll(..)
   , successRoll
